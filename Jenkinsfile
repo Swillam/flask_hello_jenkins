@@ -5,30 +5,17 @@ pipeline {
       label 'jenkins-agent-my-app'
       yaml """
 apiVersion: v1
-
 kind: Pod
-
 metadata:
-
-  name: command-demo
-
   labels:
-
-    purpose: demonstrate-command
-
+    compenent: ci
 spec:
-
   containers:
-
-  - name: command-demo-container
-
-    image: debian
-
-    command: ["printenv"]
-
-    args: ["HOSTNAME", "KUBERNETES_PORT"]
-
-  restartPolicy: OnFailure
+    - name: python
+      image: python:3.7
+      command:
+        - cat
+      tty: true
 """
     }
   }
