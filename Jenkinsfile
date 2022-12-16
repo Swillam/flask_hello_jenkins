@@ -3,8 +3,7 @@ pipeline {
     kubernetes {
       // this label will be the prefix of the generated pod's name
       label 'jenkins-agent-my-app'
-      yaml ""
-      "
+      yaml """
       apiVersion: v1
       kind: Pod
       metadata:
@@ -16,8 +15,8 @@ pipeline {
       image: python: 3.7
       command:
         -cat
-      tty: true ""
-      "
+      tty: true
+      """
     }
   }
   stages {
