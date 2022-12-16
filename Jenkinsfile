@@ -8,7 +8,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-  component: ci
+    component: ci
 spec:
   containers:
     - name: python
