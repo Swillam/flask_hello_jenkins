@@ -14,9 +14,7 @@ spec:
     - name: python
       image: 
         python: 3.7
-      command:
-        - cat
-      tty: true
+      command: ["env"]
 """
     }
   }
